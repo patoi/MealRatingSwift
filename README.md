@@ -11,4 +11,4 @@ There are two dependency: Quick and Nimble.
     mkdir Vendor
     git submodule add git@github.com:Quick/Quick.git Vendor/Quick
     git submodule add git@github.com:Quick/Nimble.git Vendor/Nimble
-
+    git submodule update --init --recursive
