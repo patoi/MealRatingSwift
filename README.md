@@ -12,3 +12,7 @@ There are two dependency: Quick and Nimble.
     git submodule add git@github.com:Quick/Quick.git Vendor/Quick
     git submodule add git@github.com:Quick/Nimble.git Vendor/Nimble
     git submodule update --init --recursive
+
+_Create an XCode workplace_ and add to MealRating, Quick and Nimble.
+
+Select MealRating project and _set Link Binary with Libraries_ on Build Phases tab. Add Quick and Nimble iOS framework.
