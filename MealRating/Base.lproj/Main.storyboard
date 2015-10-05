@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L1m-ux-R4x">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Your Meals-->
+        <scene sceneID="WDR-o2-1k7">
+            <objects>
+                <tableViewController id="buj-BW-djR" customClass="MealTableViewController" customModule="MealRating" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="SC6-iP-7hd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="90" id="PCq-SS-lxS" customClass="MealTableViewCell" customModule="MealRating" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCq-SS-lxS" id="pf8-Ur-MIr">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-2b-Hpj">
+                                            <rect key="frame" x="0.0" y="-1" width="90" height="90"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qve-Ue-gn4">
+                                            <rect key="frame" x="94" y="8" width="494" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-vJ-cbh" customClass="RatingControl" customModule="MealRating" customModuleProvider="target">
+                                            <rect key="frame" x="94" y="37" width="240" height="44"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="qve-Ue-gn4" id="c0B-dS-wjV"/>
+                                    <outlet property="photoImageView" destination="eGc-2b-Hpj" id="sqw-eR-lvG"/>
+                                    <outlet property="ratingControl" destination="lgz-vJ-cbh" id="Lsw-ZD-t8l"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="UvQ-zO-gsa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="buj-BW-djR" id="P3b-xl-kdA"/>
+                            <outlet property="delegate" destination="buj-BW-djR" id="fku-uV-Pvr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Meals" id="YVU-VV-iAe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b34-Ep-yYR">
+                            <connections>
+                                <segue destination="O2f-W5-dGM" kind="presentation" identifier="AddItem" id="XRC-iX-rKd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKl-rv-6o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="418"/>
+        </scene>
+        <!--New Meal-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="MealRating" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-dO-vuG">
+                                <rect key="frame" x="20" y="86" width="560" height="658"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-GA-oks">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="CER-Cv-t45">
+                                        <rect key="frame" x="0.0" y="42" width="560" height="560"/>
+                                        <animations/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CER-Cv-t45" secondAttribute="height" multiplier="1:1" id="dq5-wC-xAH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="l7v-lA-d6h" appends="YES" id="nFH-zF-Nxc"/>
+                                        </connections>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="KPO-3p-MSC" customClass="RatingControl" customModule="MealRating" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="614" width="240" height="44"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="i8E-GA-oks" firstAttribute="leading" secondItem="wxo-dO-vuG" secondAttribute="leading" id="5Nb-Ul-fX9"/>
+                                    <constraint firstItem="CER-Cv-t45" firstAttribute="leading" secondItem="wxo-dO-vuG" secondAttribute="leading" id="OBe-Wg-0Ga"/>
+                                    <constraint firstAttribute="trailing" secondItem="i8E-GA-oks" secondAttribute="trailing" id="kT1-hD-7lp"/>
+                                    <constraint firstAttribute="trailing" secondItem="CER-Cv-t45" secondAttribute="trailing" id="ww6-si-nDD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wxo-dO-vuG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="1A6-fa-lLe"/>
+                            <constraint firstItem="wxo-dO-vuG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Lw3-xx-4Hb"/>
+                            <constraint firstItem="wxo-dO-vuG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aeq-gG-3xt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wxo-dO-vuG" secondAttribute="trailing" id="mKI-LV-q4b"/>
+                            <constraint firstItem="wxo-dO-vuG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sOg-h3-zZU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Meal" id="x7M-Wv-Mwn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UTS-B0-MPz">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="I5t-X6-owP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="B9l-aQ-1b4">
+                            <connections>
+                                <segue destination="YiL-MD-WQI" kind="unwind" unwindAction="unwindToMealList:" id="5DW-bj-jKL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="i8E-GA-oks" id="o80-T6-3oY"/>
+                        <outlet property="photoImageView" destination="CER-Cv-t45" id="eTt-hz-XKO"/>
+                        <outlet property="ratingControl" destination="KPO-3p-MSC" id="jcT-mX-dNm"/>
+                        <outlet property="saveButton" destination="B9l-aQ-1b4" id="z6d-3K-7tA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="YiL-MD-WQI" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="l7v-lA-d6h">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="zmn-2Z-zvE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2063" y="418"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GoE-sO-8Pq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L1m-ux-R4x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zji-QX-4nH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="buj-BW-djR" kind="relationship" relationship="rootViewController" id="L3F-tO-Yws"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jab-DC-95Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="418"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JM7-ao-wDo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O2f-W5-dGM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="02i-Vb-TSy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t9n-aX-3x6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r07-5x-9aR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="816"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="320" height="320"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UvQ-zO-gsa"/>
+    </inferredMetricsTieBreakers>
+</document>
